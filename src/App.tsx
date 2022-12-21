@@ -8,10 +8,12 @@ import Navbar from './components/Navbar';
 import { Routes, Route } from 'react-router-dom';
 // Bootstrap
 import { Container } from 'react-bootstrap';
+// Context
+import { ShoppingCartProvider } from './context/ShoppingCartContext';
 
 const App = () => {
   return (
-    <>
+    <ShoppingCartProvider>
       <Navbar />
       <Container className='mb-4'>
         <Routes>
@@ -20,7 +22,7 @@ const App = () => {
           <Route path='/about' element={<About />} />
         </Routes>
       </Container>
-    </>
+    </ShoppingCartProvider>
   );
 };
 
